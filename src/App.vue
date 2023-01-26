@@ -1,29 +1,44 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+
+import axios from 'axios'
+
+export default {
+  name : 'App',
+  data(){
+    return{
+      //titolo: 'prova',
+      baseUrl: 'http://127.0.0.1:8000/api/',
+      projects : []
+    }
+  },
+  methods:{
+    getApi(){
+      axios.get(this.baseUrl + 'projects')
+      .then(result => {
+        this.projects = result.data.projects;
+        console.log(this.projects);
+      })
+    }
+  },
+  mounted(){
+    this.getApi();
+  }
+}
 </script>
 
+
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="container">
+    <h1>Progetti</h1>
+    <div v-for="project in projects" :key="project.id">
+      <h3>{{project.name}}</h3>
+      <p>{{project.summary}}</p>
+
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
+<style lang="scss">
+@use './style/general.scss';
 </style>
