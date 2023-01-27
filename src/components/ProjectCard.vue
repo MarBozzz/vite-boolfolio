@@ -15,7 +15,10 @@ export default {
 </script>
 <template>
   <div class="card" >
-    <h3>{{project.name}}</h3>
+    <h3>
+      <router-link :to="{name: 'project-detail', params:{slug: project.slug}}">{{project.name}}</router-link>
+    </h3>
+    <!-- <h3>{{project.name}}</h3> -->
     <h5>Type: <strong>{{project.type.name}}</strong></h5>
     <div class="technologies" v-if="project.technologies.length">
       <span v-for="technology in project.technologies" :key="technology.id">{{technology.name}}</span>
@@ -30,7 +33,7 @@ export default {
 
 
 .card{
-  width: calc(100% / 2 - 40px);
+  //width: calc(100% / 2 - 60px);
   margin: 30px 20px;
   padding: 20px;
   background-color: bisque;

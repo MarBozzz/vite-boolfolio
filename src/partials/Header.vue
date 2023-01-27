@@ -10,6 +10,7 @@ export default {
       <li><router-link :to="{ name: 'home' }">Home</router-link></li>
       <li><router-link :to="{ name: 'about' }">About Us</router-link></li>
       <li><router-link :to="{ name: 'contacts' }">Contacts</router-link></li>
+      <li><router-link :to="{ name: 'projects-list' }">Projects</router-link></li>
     </ul>
   </header>
 </template>

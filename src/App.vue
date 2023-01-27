@@ -12,9 +12,12 @@ export default {
 
 <template>
   <Header />
-  <router-view></router-view>
+
+  <main>
+    <router-view></router-view>
+  </main>
 </template>
 
-<style>
-
+<style lang="scss" scoped>
+@use './style/general.scss';
 </style>
