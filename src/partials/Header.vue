@@ -16,6 +16,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '../style/general.scss';
 ul {
   list-style: none;
   display: flex;

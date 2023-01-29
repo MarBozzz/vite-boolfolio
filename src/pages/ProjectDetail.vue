@@ -30,22 +30,22 @@ export default {
 <template>
   <div class="project-container">
     <h1>{{project.name}}</h1>
-    <div class="type" v-if="project.type">Type: {{project.type.name}}</div>
-    <div>
+    <h4 class="type" v-if="project.type">Type: {{project.type.name}}</h4>
+    <div v-if="project.cover_image" class="image">
+      <img :src="project.cover_image" :alt="project.name">
+    </div>
+    <div class="technologies" >
       <span v-for="technology in project.technologies" :key="technology.id" class="technology">{{technology.name}}</span>
     </div>
     <div class="summary" v-html="project.summary"></div>
     <h3>Client name: {{project.client_name}}</h3>
+    <p v-if="project.user">Projected by: <i>{{ project.user.name }}</i> </p>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use '../style/general.scss';
 
-main {
-  display: flex;
-  justify-content: center;
-}
   .project-container {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -58,6 +58,19 @@ main {
     h1 {
       color: orange;
       text-transform: capitalize;
+    }
+    .image {
+      margin-top: 20px;
+      width: 250px;
+      height: 300px;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      img {
+        width: 100%;
+      }
     }
     .type {
       color: violet;

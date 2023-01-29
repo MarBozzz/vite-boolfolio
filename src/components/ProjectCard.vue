@@ -19,7 +19,7 @@ export default {
       <router-link :to="{name: 'project-detail', params:{slug: project.slug}}">{{project.name}}</router-link>
     </h3>
     <!-- <h3>{{project.name}}</h3> -->
-    <h5>Type: <strong>{{project.type.name}}</strong></h5>
+    <h5 v-if="project.type">Type: <strong>{{project.type.name}}</strong></h5>
     <div class="technologies" v-if="project.technologies.length">
       <span v-for="technology in project.technologies" :key="technology.id">{{technology.name}}</span>
     </div>
@@ -30,8 +30,7 @@ export default {
 
 
 <style lang="scss" scoped>
-
-
+@use '../style/general.scss';
 .card{
   //width: calc(100% / 2 - 60px);
   margin: 30px 20px;

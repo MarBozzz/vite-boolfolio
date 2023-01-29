@@ -12,22 +12,32 @@ export default {
   },
   data(){
     return{
-      //titolo: 'prova',
       BASE_URL,
-      projects : []
+      projects : [],
+      pagination:{
+        current: 1,
+        last: null
+      }
     }
   },
   methods:{
-    getApi(){
-      axios.get(this.BASE_URL + 'projects')
+    getApi(page){
+      this.pagination.current = page;
+      axios.get(this.BASE_URL + 'projects', {
+        params:{
+          page: this.pagination.current
+        }
+      })
       .then(result => {
-        this.projects = result.data.projects;
-        //console.log(this.projects);
+        this.projects = result.data.projects.data;
+        //console.log(this.projects.data);
+        this.pagination.current = result.data.projects.current_page
+        this.pagination.last = result.data.projects.last_page
       })
     }
   },
   mounted(){
-    this.getApi();
+    this.getApi(1);
   }
 }
 </script>
@@ -49,6 +59,35 @@ export default {
        />
 
   </div>
+
+  <div class="paginator">
+        <button
+            :disabled="pagination.current === 1"
+            @click="getApi(1)"
+            > |	&lt; </button>
+
+        <button
+            :disabled="pagination.current === 1"
+            @click="getApi(pagination.current - 1)"
+            > &larr; </button>
+
+        <button
+            v-for="i in pagination.last" :key="i"
+            :disabled="pagination.current === i"
+            @click="getApi(i)"
+            > {{i}} </button>
+
+        <button
+            :disabled="pagination.current === pagination.last"
+            @click="getApi(pagination.current + 1)"
+            > &rarr; </button>
+
+        <button
+            :disabled="pagination.current === pagination.last"
+            @click="getApi(pagination.last)"
+            > > | </button>
+    </div>
+
 </template>
 
 
@@ -59,5 +98,12 @@ export default {
   flex-direction: column;
   flex-wrap: wrap;
   margin: 0 auto;
+  text-align: center;
+}
+.paginator{
+    button{
+        padding: 5px 10px;
+        margin: 0 3px;
+    }
 }
 </style>
