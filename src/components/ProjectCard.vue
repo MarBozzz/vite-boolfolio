@@ -23,7 +23,7 @@ export default {
     <div class="technologies" v-if="project.technologies.length">
       <span v-for="technology in project.technologies" :key="technology.id">{{technology.name}}</span>
     </div>
-    <p>{{project.summary}}</p>
+    <div class="summary" v-html="project.summary"></div>
   </div>
   
 </template>

@@ -63,7 +63,7 @@ export default {
       margin-top: 20px;
       width: 250px;
       height: 300px;
-      background-color: black;
+      background-color: white;
       display: flex;
       justify-content: center;
       align-items: center;
