@@ -35,7 +35,7 @@ export default {
       <img :src="project.cover_image" :alt="project.name">
     </div>
     <div class="technologies" >
-      <span v-for="technology in project.technologies" :key="technology.id" class="technology">{{technology.name}}</span>
+      <span v-for="technology in project.technologies" :key="'technology'+technology.id" class="technology">{{technology.name}}</span>
     </div>
     <div class="summary" v-html="project.summary"></div>
     <h3>Client name: {{project.client_name}}</h3>

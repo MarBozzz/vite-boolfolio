@@ -14,6 +14,6 @@ export default {
   <ContactsForm />
 </template>
 
-<style>
-
+<style lang="scss" scoped>
+@use '../style/general.scss';
 </style>

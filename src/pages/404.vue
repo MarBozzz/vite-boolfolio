@@ -9,6 +9,6 @@ export default {
   <h1>Error 404</h1>
 </template>
 
-<style>
-
+<style lang="scss" scoped>
+@use '../style/general.scss';
 </style>
