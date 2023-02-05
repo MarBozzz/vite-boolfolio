@@ -18,16 +18,21 @@ export default {
 <style lang="scss" scoped>
 @use '../style/general.scss';
 ul {
+  height: 100%;
   list-style: none;
   display: flex;
   justify-content: center;
+  align-items: center;
   li {
-    margin: 20px 20px;
+    margin: 0 20px;
     a {
       text-decoration: none;
       color: black;
+      text-transform: uppercase;
+      font-size: .8rem;
       &:hover, &.router-link-exact-active {
-        color: green;
+        color: white;
+        font-size: .85rem
       }
     }
   }

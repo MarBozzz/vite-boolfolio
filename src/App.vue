@@ -11,11 +11,13 @@ export default {
 
 
 <template>
+<body>
   <Header />
 
   <main>
     <router-view></router-view>
   </main>
+</body>
 </template>
 
 <style lang="scss" scoped>

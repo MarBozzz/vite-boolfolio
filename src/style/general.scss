@@ -7,10 +7,12 @@
 body {
   margin: 0 auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: black;
 }
 
 header {
-  height: 75px;
+  height: 55px;
+  background-color: rgb(66, 89, 18);
 }
 
 
@@ -28,13 +30,12 @@ h1 {
 
 main {
   width: 100%;
-  height: calc(100vh - 95px);
+  height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  
 }
 
 img {
