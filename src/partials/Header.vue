@@ -8,7 +8,7 @@ export default {
   <header>
     <ul>
       <li><router-link :to="{ name: 'home' }">Home</router-link></li>
-      <li><router-link :to="{ name: 'about' }">About Us</router-link></li>
+      <li><router-link :to="{ name: 'about' }">About</router-link></li>
       <li><router-link :to="{ name: 'contacts' }">Contacts</router-link></li>
       <li><router-link :to="{ name: 'projects-list' }">Projects</router-link></li>
     </ul>
@@ -17,7 +17,8 @@ export default {
 
 <style lang="scss" scoped>
 @use '../style/general.scss';
-ul {
+header {
+  ul {
   height: 100%;
   list-style: none;
   display: flex;
@@ -30,11 +31,14 @@ ul {
       color: black;
       text-transform: uppercase;
       font-size: .8rem;
-      &:hover, &.router-link-exact-active {
+      &:hover,
+      &.active
+      //&.router-link-active 
+      {
         color: white;
-        font-size: .85rem
       }
     }
   }
+}
 }
 </style>

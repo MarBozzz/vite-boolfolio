@@ -9,36 +9,61 @@ import ProjectDetail from './pages/ProjectDetail.vue';
 
 const router = createRouter({
   history: createWebHistory(),
-  linkExactActiveClass: 'active',
+  //linkExactActiveClass: 'active',
+  linkActiveClass: 'active',
   routes: [
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      meta: {
+        enterClass: 'animate__animated animate__fadeIn',
+        leaveClass: 'animate__animated animate__fadeOut',
+      }
     },
     {
       path: '/chi-siamo',
       name: 'about',
-      component: About
+      component: About,
+      meta: {
+        enterClass: 'animate__animated animate__fadeIn',
+        leaveClass: 'animate__animated animate__fadeOut',
+      }
     },
     {
       path: '/contatti',
       name: 'contacts',
-      component: Contacts
+      component: Contacts,
+      meta: {
+        enterClass: 'animate__animated animate__bounceInRight',
+        leaveClass: 'animate__animated animate__bounceOutLeft',
+      }
     },
     {
       path: '/projects-list',
       name: 'projects-list',
-      component: ProjectsList
+      component: ProjectsList,
+      meta: {
+        enterClass: 'animate__animated animate__fadeIn',
+        leaveClass: 'animate__animated animate__fadeOut',
+      }
     },
     {
       path: '/projects-list/project-detail/:slug',
       name: 'project-detail',
-      component: ProjectDetail
+      component: ProjectDetail,
+      meta: {
+        enterClass: 'animate__animated animate__fadeIn',
+        leaveClass: 'animate__animated animate__fadeOut',
+      }
     },
     {
       path: '/:pathMatch(.*)*',
-      component: Error404
+      component: Error404,
+      meta: {
+        enterClass: 'animate__animated animate__fadeIn',
+        leaveClass: 'animate__animated animate__fadeOut',
+      }
     }
   ]
 })

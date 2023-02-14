@@ -58,7 +58,7 @@ export default {
 
 <template>
 
-<div class="wrapper">
+<div class="inner-container">
   <div class="project-container">
 
     <h1>{{ store.main_title }}</h1>
@@ -114,7 +114,7 @@ export default {
 
 <style lang="scss" scoped>
 @use '../style/general.scss';
-.wrapper {
+.inner-container {
   display: flex;
   height: 100%;
   .project-container {

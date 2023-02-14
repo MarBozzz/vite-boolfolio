@@ -10,7 +10,7 @@ export default {
 
 
 <template>
-  <div class="container">
+  <div class="inner-container">
     <div class="title-container">
       <h1>Contacts</h1>
     </div>
@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 @use '../style/general.scss';
-.container {
+.inner-container {
   width: 50%;
   display: flex;
   flex-direction: column;

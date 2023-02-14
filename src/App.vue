@@ -14,12 +14,26 @@ export default {
 <body>
   <Header />
 
-  <main>
-    <router-view></router-view>
+  <main class="main-container">
+    <router-view v-slot="{ Component, route }" class="page">
+      <transition 
+        :enter-active-class="route.meta.enterClass"
+        :leave-active-class="route.meta.leaveClass"
+      >
+        <component :is="Component"/>
+      </transition>
+    </router-view>
   </main>
 </body>
 </template>
 
 <style lang="scss" scoped>
 @use './style/general.scss';
+
+.main-container {
+  position: relative;
+  .page {
+    position: absolute;
+  }
+}
 </style>

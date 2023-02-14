@@ -6,7 +6,9 @@ export default {
 
 
 <template>
-  <h1>Home</h1>
+  <div class="inner-container">
+    <h1>Home</h1>
+  </div>
 </template>
 
 <style lang="scss" scoped>

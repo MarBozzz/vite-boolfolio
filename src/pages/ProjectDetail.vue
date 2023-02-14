@@ -28,7 +28,7 @@ export default {
 
 
 <template>
-  <div class="project-container">
+  <div class="inner-container">
     <h1>{{project.name}}</h1>
     <h4 class="type" v-if="project.type">Type: {{project.type.name}}</h4>
     <div v-if="project.cover_image" class="image">
@@ -46,7 +46,7 @@ export default {
 <style lang="scss" scoped>
 @use '../style/general.scss';
 
-  .project-container {
+  .inner-container {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
